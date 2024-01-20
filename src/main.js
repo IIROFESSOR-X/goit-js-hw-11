@@ -3,7 +3,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-var API_KEY = '41892846-853e297a2cd9e54f76867f33a';
 const form = document.querySelector('.form');
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
@@ -22,7 +21,7 @@ function toRenderImages(event) {
   const userSearch = form.search.value.trim();
 
   const url = new URL('https://pixabay.com/api/');
-  url.searchParams.append('key', '41563330-08ed4e1341b4edecabdae7272');
+  url.searchParams.append('key', '41892846-853e297a2cd9e54f76867f33a');
   url.searchParams.append('q', userSearch);
   url.searchParams.append('image_type', 'photo');
   url.searchParams.append('orientation', 'horizontal');
@@ -45,7 +44,6 @@ function toRenderImages(event) {
             'Sorry, there are no images matching your search query. Please try again!',
         });
       }
-      gallery.innerHTML = '';
       gallery.innerHTML = images.hits.reduce(
         (
           acc,
